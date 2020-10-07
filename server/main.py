@@ -1,10 +1,11 @@
 from flask import Flask
+import config
 import json
 import googlemaps
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
-gmaps = googlemaps.Client(key="API_KEY_HERE")
+gmaps = googlemaps.Client(key=config.maps_api_key)
 
 app = Flask(__name__)
 
