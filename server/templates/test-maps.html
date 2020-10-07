@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map
+
+      // Format date (e.g., '2020-08-01T00:00:00.000' => '08/01/2020')
+      function formatMapDate(date) {
+        var dateNoTime = date.split('T')[0]
+        var unitArray = dateNoTime.split('-')
+        var year = unitArray[0]
+        var month = unitArray[1]
+        var day = unitArray[2]
+        return `${month}/${day}/${year}`
+      }
+
+      // Create Map (center is on South Quad)
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: new google.maps.LatLng(40.101931, -88.22716),
+          mapTypeId: 'terrain'
+        })
+      }
+      var crimeData
+      var markerArray = []
+      var infoWindows = []
+      $.get('http://localhost:5000/crime', (data) => {
+        crimeData = JSON.parse(data)
+        for (var i = 0; i < crimeData.length; i++) {
+          // If there's no address, don't plot point
+          if (crimeData[i].mapping_address == undefined) {
+            continue
+          }
+
+          // Format date (e.g., '2020-08-01T00:00:00.000' => '08/01/2020')
+          var newDate = formatMapDate(crimeData[i].date_occurred)
+
+          // Create InfoWindow for each crime
+          const infowindow = new google.maps.InfoWindow({
+            content: `<h2>${crimeData[i].crime_category_description}</h2>
+            <h3>${crimeData[i].crime_description}</h3>
+            <p>${newDate}</p>`
+          })
+          infoWindows.push(infowindow)
+
+          // Create Marker for each crime
+          var lat = crimeData[i].mapping_address.latitude
+          var long = crimeData[i].mapping_address.longitude
+          var latLng = new google.maps.LatLng(lat, long)
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            title: crimeData[i].crime_description
+          })
+          markerArray.push(marker)
+        }
+        markerArray.forEach((marker, index) => {
+          marker.addListener('click', () => {
+            infoWindows[index].open(map, marker)
+          })
+        })
+      })
+
+      // Loop through the results array and place a marker for each
+      // set of coordinates.
+      window.eqfeed_callback = function (results) {
+        for (var i = 0; i < results.features.length; i++) {
+          var coords = results.features[i].geometry.coordinates
+          var latLng = new google.maps.LatLng(coords[1], coords[0])
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          })
+        }
+      }
+    </script>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=***REMOVED***&callback=initMap"
+    ></script>
+  </body>
+</html>
