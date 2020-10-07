@@ -4,7 +4,7 @@ import googlemaps
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
-gmaps = googlemaps.Client(key="***REMOVED***")
+gmaps = googlemaps.Client(key="API_KEY_HERE")
 
 app = Flask(__name__)
 
