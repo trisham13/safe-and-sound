@@ -13,6 +13,8 @@ gmaps = googlemaps.Client(key=config.maps_api_key)
 
 app = Flask(__name__)
 
+#test
+
 # Allows '/crime-map' to access data from '/crime'
 CORS(app, resources={r"/*": {"origins": "*"}})
 
