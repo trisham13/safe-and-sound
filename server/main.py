@@ -77,11 +77,14 @@ def directions():
 def crime_map():
     return render_template('test-maps.html')
 
+
 #returns the most optimal route from location A to B 
+#location_from and location_to query params need to be in the format 'x, y'
+#   aka, params need to be strings
 @app.route('/get-directions')
 def get_directions():
     query_args = request.args #query params
-    
+
     #calls method in directions.py with from and to locations
     return directions.get_route_by_min_crimes(query_args[location_from], query_args[location_to])
 
