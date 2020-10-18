@@ -13,7 +13,7 @@ gmaps = googlemaps.Client(key=config.maps_api_key)
 
 app = Flask(__name__)
 
-#test
+# test
 
 # Allows '/crime-map' to access data from '/crime'
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -47,6 +47,22 @@ def crime():
     return crime_data
 
 
+@app.route('/directions')
+def directions():
+    data_params = {
+        'origin': '', # Origin coords go here
+        'mode': 'walking',
+        'key': config.maps_api_key,
+        'destination': '40.102030,-88.212862',
+        'alternatives': 'true'
+    }
+    # print(gmaps.directions('1001+W+Pennsylvania+Ave', '40.102795,-88.213318', mode='walking', alternatives='true'))
+
+    directions_data = requests.get(
+        'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
+    return directions_data
+
+
 @ app.route('/crime-map')
 # Access to html file with '/crime-map'
 def crime_map():
@@ -54,4 +70,4 @@ def crime_map():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)  # saving file will reload the server
+    app.run(debug=True, host='0.0.0.0', port=5000)  # saving file will reload the server

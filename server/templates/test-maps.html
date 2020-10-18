@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="initial-scale=1.0" />
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -80,20 +81,82 @@
             infoWindows[index].open(map, marker)
           })
         })
+        console.log(infoWindows)
+        $.get('http://localhost:5000/directions', (data) => {
+          const directionsData = JSON.parse(data)
+          console.log(directionsData)
+          const geocoder = new google.maps.Geocoder()
+          // console.log(
+          //   geocoder.geocode({
+          //     placeId: directionsData.geocoded_waypoints[0].place_id
+          //   })
+          // )
+          directionsData.geocoded_waypoints.forEach((waypoint, index) => {
+            //   geocoder.geocode({ placeId: waypoint.place_id }, (results, status) => {
+            //   if (status === 'OK') {
+            //     if (results[0]) {
+            //       const marker = new google.maps.Marker({
+            //         map,
+            //         position: results[0].geometry.location
+            //       })
+            //     } else {
+            //       window.alert('No results found')
+            //     }
+            //   } else {
+            //     window.alert('Geocoder failed due to: ' + status)
+            //   }
+            // })
+          })
+          directionsData.routes.forEach((route, routeIndex) => {
+            const firstPolyline = route.overview_polyline.points
+            const decodedPolyline = google.maps.geometry.encoding.decodePath(
+              firstPolyline
+            )
+            console.log('directions: ')
+            console.log(decodedPolyline)
+            const flightPath = new google.maps.Polyline({
+              path: decodedPolyline,
+              geodesic: true,
+              strokeColor: '#FF0000',
+              strokeOpacity: 1.0,
+              strokeWeight: 2
+            })
+            for (let index = 0; index < markerArray.length; index++) {
+              let latLng = markerArray[index].position
+              let inCrimePath = google.maps.geometry.poly.isLocationOnEdge(
+                latLng,
+                flightPath,
+                10e-5
+              )
+              if (inCrimePath) {
+                console.log(
+                  `Warning! near ${marker.title} ${infoWindows[index].content} ${index}`
+                )
+                flightPath.strokeColor = '#000000'
+                // flightPath = null
+                // flightPath.setMap(map)
+                break
+              } else {
+                // console.log('good one')
+                flightPath.setMap(map)
+              }
+            }
+          })
+        })
       })
 
       // Loop through the results array and place a marker for each
       // set of coordinates.
-      window.eqfeed_callback = function (results) {
-        for (var i = 0; i < results.features.length; i++) {
-          var coords = results.features[i].geometry.coordinates
-          var latLng = new google.maps.LatLng(coords[1], coords[0])
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          })
-        }
-      }
+      // window.eqfeed_callback = function (results) {
+      //   for (var i = 0; i < results.features.length; i++) {
+      //     var coords = results.features[i].geometry.coordinates
+      //     var latLng = new google.maps.LatLng(coords[1], coords[0])
+      //     var marker = new google.maps.Marker({
+      //       position: latLng,
+      //       map: map
+      //     })
+      //   }
+      // }
     </script>
     <script
       defer
