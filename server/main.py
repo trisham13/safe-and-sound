@@ -69,6 +69,14 @@ def directions():
 def crime_map():
     return render_template('test-maps.html')
 
+#returns the most optimal route from location A to B 
+@app.route('/get-directions')
+def get_directions():
+    query_args = request.args #query params
+    
+    #calls method in directions.py with from and to locations
+    return directions.get_route_by_min_crimes(query_args[location_from], query_args[location_to])
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)  # saving file will reload the server
