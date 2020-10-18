@@ -31,6 +31,7 @@ def json_example():
     return json.dumps(d)  # Will return the dict as JSON
 
 
+# gets data from urbana crime data API and displays it as a json
 @app.route('/crime')
 def crime():
     # You can use a 'year' param (e.g., http://localhost:5000/crime?year=2015 etc.)
