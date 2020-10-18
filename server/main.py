@@ -6,6 +6,7 @@ import config
 import json
 import googlemaps
 import requests
+import pyrebase
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
@@ -13,7 +14,15 @@ gmaps = googlemaps.Client(key=config.maps_api_key)
 
 app = Flask(__name__)
 
-# test
+firebase_config = {
+  "apiKey": config.firebase_api_key,
+  "authDomain": "fa20team3project.firebaseapp.com",
+  "databaseURL": "https://fa20team3project.firebaseio.com/",
+  "storageBucket": "fa20team3project.appspot.com"
+}
+
+firebase = pyrebase.initialize_app(firebase_config)
+db = firebase.database()
 
 # Allows '/crime-map' to access data from '/crime'
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -21,7 +30,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/')  # https://localhost:5000/
 def home():
-    return "Hey there!"
+    return db.child("userCrimes").get().val()
 
 
 @app.route('/json-example')  # https://localhost:5000/json-example
@@ -57,7 +66,6 @@ def directions():
         'destination': '40.102030,-88.212862',
         'alternatives': 'true'
     }
-    # print(gmaps.directions('1001+W+Pennsylvania+Ave', '40.102795,-88.213318', mode='walking', alternatives='true'))
 
     directions_data = requests.get(
         'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
