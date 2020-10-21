@@ -41,7 +41,7 @@ def json_example():
     return json.dumps(d)  # Will return the dict as JSON
 
 
-# gets data from urbana crime data API and displays it as a json
+# Gets data from urbana crime data API and displays it as a JSON
 @app.route('/crime')
 def crime():
     # You can use a 'year' param (e.g., http://localhost:5000/crime?year=2015 etc.)
@@ -57,21 +57,21 @@ def crime():
                               params=data_params).text
     return crime_data
 
-@ app.route('/crime-map')
 # Access to html file with '/crime-map'
+@app.route('/crime-map')
 def crime_map():
     return render_template('test-maps.html')
 
 
 # Returns the most optimal route from location A to B 
-# location_from and location_to query params need to be in the format 'x, y'
+# 'location_from' and 'location_to' query params need to be in the format 'x, y'
 #   aka, params need to be strings
 @app.route('/get-directions')
 def get_directions():
     query_args = request.args # query params
 
-    # calls method in directions.py with from and to locations
+    # Calls method in directions.py with 'from' and 'to' locations
     return directions.get_route_by_min_crimes(query_args.get('location_from'), query_args.get('location_to'))
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)  # saving file will reload the server
+    app.run(debug=True, host='0.0.0.0', port=5000)  # Saving file will reload the server
