@@ -1,6 +1,7 @@
 import googlemaps
 import requests
 import config
+import polyline
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
@@ -16,4 +17,6 @@ def get_route_by_min_crimes(location_from, location_to):
     }
     directions_data = requests.get(
         'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
-    return directions_data
+    #decode polyline into list of tuples
+    locations = polyline.decode('u{~vFvyys@fS]')
+    return str(locations)
