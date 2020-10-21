@@ -7,6 +7,7 @@ import json
 import googlemaps
 import requests
 import pyrebase
+import directions
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
@@ -56,38 +57,21 @@ def crime():
                               params=data_params).text
     return crime_data
 
-
-@app.route('/directions')
-def directions():
-    data_params = {
-        'origin': '', # Origin coords go here
-        'mode': 'walking',
-        'key': config.maps_api_key,
-        'destination': '40.102030,-88.212862',
-        'alternatives': 'true'
-    }
-
-    directions_data = requests.get(
-        'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
-    return directions_data
-
-
 @ app.route('/crime-map')
 # Access to html file with '/crime-map'
 def crime_map():
     return render_template('test-maps.html')
 
 
-#returns the most optimal route from location A to B 
-#location_from and location_to query params need to be in the format 'x, y'
+# Returns the most optimal route from location A to B 
+# location_from and location_to query params need to be in the format 'x, y'
 #   aka, params need to be strings
 @app.route('/get-directions')
 def get_directions():
-    query_args = request.args #query params
+    query_args = request.args # query params
 
-    #calls method in directions.py with from and to locations
-    return directions.get_route_by_min_crimes(query_args[location_from], query_args[location_to])
-
+    # calls method in directions.py with from and to locations
+    return directions.get_route_by_min_crimes(query_args.get('location_from'), query_args.get('location_to'))
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)  # saving file will reload the server
