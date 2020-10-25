@@ -31,12 +31,12 @@ db = firebase.database()
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-@app.route('/')  # https://localhost:5000/
+@app.route('/')  # http://localhost:5000/
 def home():
     return db.child("userCrimes").get().val()
 
 
-@app.route('/json-example')  # https://localhost:5000/json-example
+@app.route('/json-example')  # http://localhost:5000/json-example
 def json_example():
     d = {}
     d['example'] = 'value'
