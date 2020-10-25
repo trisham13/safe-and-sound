@@ -1,13 +1,15 @@
-from flask import Flask
-from flask_cors import CORS
-from flask import request
-from flask import render_template
-import config
 import json
+
+from flask import Flask, request, render_template
+from flask_cors import CORS
 import googlemaps
-import requests
 import pyrebase
+import requests
+
+import config
 import directions
+from parse_crimes import parse_crimes
+
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
