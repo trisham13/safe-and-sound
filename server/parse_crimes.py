@@ -1,8 +1,9 @@
 import json
+from datetime import datetime
 import dateutil.parser
 import pyrebase
-import config
 import requests
+import config
 
 # Set up Firebase
 firebase_config = {
@@ -52,10 +53,13 @@ def parse_crimes():
 
     # Urbana crimes:
     for crime in crime_data:
-        # Skip to next crime if this one doesn't have an address or location
+        # Skip to next crime if this one doesn't have an 
+        # address, location, or description
         if 'mapping_address' not in crime:
             continue
         if 'latitude' not in crime['mapping_address']:
+            continue
+        if 'crime_category_description' not in crime:
             continue
 
         # Keep relevant information, add crime to formatted_crimes
@@ -76,6 +80,6 @@ def parse_crimes():
 
     # Sort all by date_reported
     formatted_crimes = sorted(
-        formatted_crimes, key=lambda x: x['date_reported'])
+        formatted_crimes, key=lambda x: datetime.strptime(x['date_reported'], '%m/%d/%Y'))
 
     return formatted_crimes
