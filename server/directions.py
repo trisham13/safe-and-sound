@@ -74,12 +74,12 @@ def number_of_crimes(route):
 
 def is_near_crime(point, crime_locs):
     # if we have calculated this point alerady, don't do it again
-    if point in is_point_close_to_crime:
+    if point in is_point_close_to_crime.keys():
         return is_point_close_to_crime[point]
 
     # if the point were looking at is less than some miles from a point we calculated before,
     # just return the result of the point we calculated
-    for seen_point in is_point_close_to_crime:
+    for seen_point in is_point_close_to_crime.keys():
         dist_to_seen_point = distance.distance(seen_point, point)
         if dist_to_seen_point < ALLOWED_EXTRA_LEEWAY:
             return is_point_close_to_crime[seen_point]
