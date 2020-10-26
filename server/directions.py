@@ -12,7 +12,10 @@ import json
 gmaps = googlemaps.Client(key=config.maps_api_key)
 
 # the closest acceptable distance a point can be from a crime in miles (rn the number is arbritrary)
-MIN_ACCEPTABLE_CRIME_DISTANCE = .25
+MIN_ACCEPTABLE_CRIME_DISTANCE = .75
+
+#
+is_point_close_to_crime = dict()
 
 # returns the best route as a polyline
 def get_best_route(location_from, location_to):
@@ -73,11 +76,17 @@ def number_of_crimes(route):
     return num_crimes
 
 def is_near_crime(point, crime_locs):
+    # if we have calculated this point alerady, don't do it again
+    if point in is_point_close_to_crime:
+        return is_point_close_to_crime[point]
+
     for crime_loc in crime_locs:
         # rn this computes the geodesic dist, I might change it to great-circle distance if that's optimal
         dist_to_crime = distance.distance(crime_loc, point).miles
         if dist_to_crime < MIN_ACCEPTABLE_CRIME_DISTANCE:
+            is_point_close_to_crime[point] = True
             return True
+    is_point_close_to_crime[point] = False
     return False
 
 # finds the index of the highest rating in safetey ratings. We need this because that will be the same 
@@ -112,5 +121,3 @@ def create_json(decoded_polylines, safety_ratings):
     # convert to json
     json.dumps(polylines_json)
     return polylines_json
-
-get_best_route('40.101099,-88.231979', '40.111086,-88.239049')
