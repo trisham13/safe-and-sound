@@ -3,6 +3,8 @@ import requests
 import config
 import polyline
 import ast
+from geopy import distance
+from parse_crimes import parse_crimes
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
@@ -12,16 +14,12 @@ gmaps = googlemaps.Client(key=config.maps_api_key)
 # returns the best route as a polyline
 def get_best_route(location_from, location_to):
     data_params = {
-        'origin': location_from,
+        'origin': '40.101099, -88.231979',#location_from,
         'mode': 'walking',
         'key': config.maps_api_key,
-        'destination': location_to,
-        'alternatives': 'true'
+        'destination': '40.111086, -88.239049',#location_to,
+        'alternatives':'true'
     }
-    directions_data = requests.get(
-        'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
-
-    # return directions_data
 
     # converts JSON string to python dict
     directions_data = ast.literal_eval(directions_data)
@@ -38,8 +36,9 @@ def get_best_route(location_from, location_to):
     # safety_ratings is in the form [s,t,..], where s and t are numbers representing
     # each route's safety weighting. A higher safety rating is better.
     safety_ratings = [safety_rating(route) for route in decoded_polylines]
-
-    return str(decoded_polylines)
+    idx_of_best_route = find_max_rating_index(safety_ratings)
+    # at the moment I'm returning all the relevent data from the API regarding the route we picked as optimal
+    return str(directions_data["routes"][idx_of_best_route])
 
 
 # calculates the safety rating of a route
@@ -50,5 +49,33 @@ def safety_rating(route):
 
 # calculates the number of crimes near or on a particular route
 def number_of_crimes(route):
-    # TODO: write this method
-    return 0
+    num_crimes = 0
+    crime_data = parse_crimes()
+    # list of lat-lng tuples from the crime data
+    crime_locs = [(crime['location']['latitude'],crime['location']['longitude']) for crime in crime_data]
+    for point in route:
+        if is_near_crime(point, crime_locs):
+            num_crimes += 1
+    return num_crimes
+
+def is_near_crime(point, crime_locs):
+    # the closest acceptable distance a point can be from a crime in miles (rn the number is arbritrary)
+    min_acceptable_dist = .75
+    for crime_loc in crime_locs:
+        # rn this computes the geodesic dist, I might change it to great-circle distance if that's optimal
+        dist_to_crime = distance.distance(crime_loc, point).miles
+        if dist_to_crime < min_acceptable_dist:
+            return True
+    return False
+
+# finds the index of the highest rating in safetey ratings. We need this because that will be the same 
+# index where the best route will be since both safety_ratings and directions_data are indexed the same way
+def find_max_rating_index(safety_ratings):
+    max_rating = safety_ratings[0]
+    max_idx = 0
+    for i in range (1,len(safety_ratings)):
+        if safety_ratings[i] > max_rating:
+            max_rating = safety_ratings[i]
+            max_idx = i
+    return max_idx
+
