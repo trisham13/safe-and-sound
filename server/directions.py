@@ -5,40 +5,54 @@ import polyline
 import ast
 from geopy import distance
 from parse_crimes import parse_crimes
+import json
 
 # Google Maps API client -- everything goes through here
 # email and password for associated account in Discord
 gmaps = googlemaps.Client(key=config.maps_api_key)
 
+# the closest acceptable distance a point can be from a crime in miles (rn the number is arbritrary)
+MIN_ACCEPTABLE_CRIME_DISTANCE = .25
 
 # returns the best route as a polyline
 def get_best_route(location_from, location_to):
     data_params = {
-        'origin': '40.101099, -88.231979',#location_from,
+        'origin': location_from,#location_from,
         'mode': 'walking',
         'key': config.maps_api_key,
-        'destination': '40.111086, -88.239049',#location_to,
+        'destination': location_to ,#location_to,
         'alternatives':'true'
     }
+
+    #makes google maps api request
+    directions_data = requests.get(
+        'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
 
     # converts JSON string to python dict
     directions_data = ast.literal_eval(directions_data)
 
+
+    # the polyline we need is in directions_data["routes"][n][overview_polyline][points]
+    polylines = [directions_data["routes"][n]["overview_polyline"]["points"]
+                         for n in range(len(directions_data["routes"]))]
+
     # decodes polyline into list of tuples
     # this is an example: locations = polyline.decode('u{~vFvyys@fS]')
-    # the polyline we need is in directions_data["routes"][n][overview_polyline][points]
     # if start location is (a,b) and end location is (x,y)
     # decoded_polylines is in the form of [[(a,b),(c,d),...(x,y)],[(a,b),(g,h),...(x,y)]]
     # this example is for 2 routes, hence 2 inner lists
-    decoded_polylines = [polyline.decode(directions_data["routes"][n]["overview_polyline"]["points"])
-                         for n in range(len(directions_data["routes"]))]
+    decoded_polylines = [polyline.decode(i) for i in polylines]
 
     # safety_ratings is in the form [s,t,..], where s and t are numbers representing
     # each route's safety weighting. A higher safety rating is better.
     safety_ratings = [safety_rating(route) for route in decoded_polylines]
-    idx_of_best_route = find_max_rating_index(safety_ratings)
-    # at the moment I'm returning all the relevent data from the API regarding the route we picked as optimal
-    return str(directions_data["routes"][idx_of_best_route])
+
+    # create readable json out of data
+    polylines_json = create_json(polylines, safety_ratings)
+    return polylines_json
+
+    # # at the moment I'm returning all the relevant data from the API regarding the route we picked as optimal
+    # return str(directions_data["routes"][idx_of_best_route])
 
 
 # calculates the safety rating of a route
@@ -59,12 +73,10 @@ def number_of_crimes(route):
     return num_crimes
 
 def is_near_crime(point, crime_locs):
-    # the closest acceptable distance a point can be from a crime in miles (rn the number is arbritrary)
-    min_acceptable_dist = .75
     for crime_loc in crime_locs:
         # rn this computes the geodesic dist, I might change it to great-circle distance if that's optimal
         dist_to_crime = distance.distance(crime_loc, point).miles
-        if dist_to_crime < min_acceptable_dist:
+        if dist_to_crime < MIN_ACCEPTABLE_CRIME_DISTANCE:
             return True
     return False
 
@@ -79,3 +91,26 @@ def find_max_rating_index(safety_ratings):
             max_idx = i
     return max_idx
 
+
+# creates a json in the following format
+# { "polylines" = [
+#   { "polyline": "lrqcjgk", "safety_rating": 5 },
+#   { "polyline": "qrcgqkw", "safety_rating": 10 },
+#   { "polyline": "jaeqjkr", "safety_rating": 2 } ] }
+def create_json(decoded_polylines, safety_ratings):
+    # initialize python style dict to later convert into json format
+    polylines_json = {}
+    polylines_json["polylines"] = []
+
+    # construct python style dict to later convert into json format
+    for i in range(len(decoded_polylines)):
+        route_details = {}
+        route_details["polyline"] =  decoded_polylines[i]
+        route_details["safety_rating"] =  safety_ratings[i]
+        polylines_json["polylines"].append(route_details)
+
+    # convert to json
+    json.dumps(polylines_json)
+    return polylines_json
+
+get_best_route('40.101099,-88.231979', '40.111086,-88.239049')
