@@ -1,4 +1,3 @@
-import googlemaps
 import requests
 import config
 import polyline
@@ -7,12 +6,9 @@ from geopy import distance
 from parse_crimes import parse_crimes
 import json
 
-# Google Maps API client -- everything goes through here
-# email and password for associated account in Discord
-gmaps = googlemaps.Client(key=config.maps_api_key)
-
 # the closest acceptable distance a point can be from a crime in miles (rn the number is arbritrary)
 MIN_ACCEPTABLE_CRIME_DISTANCE = .75
+ALLOWED_EXTRA_LEEWAY = .35
 
 # the dict of crime proximity
 is_point_close_to_crime = dict()
@@ -81,6 +77,14 @@ def is_near_crime(point, crime_locs):
     if point in is_point_close_to_crime:
         return is_point_close_to_crime[point]
 
+    # if the point were looking at is less than some miles from a point we calculated before,
+    # just return the result of the point we calculated
+    for seen_point in is_point_close_to_crime:
+        dist_to_seen_point = distance.distance(seen_point, point)
+        if dist_to_seen_point < ALLOWED_EXTRA_LEEWAY:
+            return is_point_close_to_crime[seen_point]
+
+    # for every crime
     for crime_loc in crime_locs:
         # rn this computes the geodesic dist, I might change it to great-circle distance if that's optimal
         dist_to_crime = distance.distance(crime_loc, point).miles
