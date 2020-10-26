@@ -14,30 +14,30 @@ gmaps = googlemaps.Client(key=config.maps_api_key)
 # the closest acceptable distance a point can be from a crime in miles (rn the number is arbritrary)
 MIN_ACCEPTABLE_CRIME_DISTANCE = .75
 
-#
+# the dict of crime proximity
 is_point_close_to_crime = dict()
+
 
 # returns the best route as a polyline
 def get_best_route(location_from, location_to):
     data_params = {
-        'origin': location_from,#location_from,
+        'origin': location_from,  # location_from,
         'mode': 'walking',
         'key': config.maps_api_key,
-        'destination': location_to ,#location_to,
-        'alternatives':'true'
+        'destination': location_to,  # location_to,
+        'alternatives': 'true'
     }
 
-    #makes google maps api request
+    # makes google maps api request
     directions_data = requests.get(
         'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
 
     # converts JSON string to python dict
     directions_data = ast.literal_eval(directions_data)
 
-
     # the polyline we need is in directions_data["routes"][n][overview_polyline][points]
     polylines = [directions_data["routes"][n]["overview_polyline"]["points"]
-                         for n in range(len(directions_data["routes"]))]
+                 for n in range(len(directions_data["routes"]))]
 
     # decodes polyline into list of tuples
     # this is an example: locations = polyline.decode('u{~vFvyys@fS]')
@@ -69,11 +69,12 @@ def number_of_crimes(route):
     num_crimes = 0
     crime_data = parse_crimes()
     # list of lat-lng tuples from the crime data
-    crime_locs = [(crime['location']['latitude'],crime['location']['longitude']) for crime in crime_data]
+    crime_locs = [(crime['location']['latitude'], crime['location']['longitude']) for crime in crime_data]
     for point in route:
         if is_near_crime(point, crime_locs):
             num_crimes += 1
     return num_crimes
+
 
 def is_near_crime(point, crime_locs):
     # if we have calculated this point alerady, don't do it again
@@ -89,12 +90,13 @@ def is_near_crime(point, crime_locs):
     is_point_close_to_crime[point] = False
     return False
 
-# finds the index of the highest rating in safetey ratings. We need this because that will be the same 
+
+# finds the index of the highest rating in safetey ratings. We need this because that will be the same
 # index where the best route will be since both safety_ratings and directions_data are indexed the same way
 def find_max_rating_index(safety_ratings):
     max_rating = safety_ratings[0]
     max_idx = 0
-    for i in range (1,len(safety_ratings)):
+    for i in range(1, len(safety_ratings)):
         if safety_ratings[i] > max_rating:
             max_rating = safety_ratings[i]
             max_idx = i
@@ -114,8 +116,8 @@ def create_json(decoded_polylines, safety_ratings):
     # construct python style dict to later convert into json format
     for i in range(len(decoded_polylines)):
         route_details = {}
-        route_details["polyline"] =  decoded_polylines[i]
-        route_details["safety_rating"] =  safety_ratings[i]
+        route_details["polyline"] = decoded_polylines[i]
+        route_details["safety_rating"] = safety_ratings[i]
         polylines_json["polylines"].append(route_details)
 
     # convert to json
