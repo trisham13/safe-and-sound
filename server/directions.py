@@ -13,7 +13,6 @@ ALLOWED_EXTRA_LEEWAY = .35
 # the dict of crime proximity
 is_point_close_to_crime = dict()
 
-global crime_data
 
 # returns the best route as a polyline
 def get_best_route(location_from, location_to):
