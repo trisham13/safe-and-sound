@@ -4,4 +4,5 @@ danger_levels = {
     'Deception & Fraud': 3,
     'Test Category': 5,
     'Traffic Offenses': 7,
+    # TODO: Assign danger levels to all crime categories
 }
