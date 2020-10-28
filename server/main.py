@@ -4,7 +4,6 @@ from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import googlemaps
 import pyrebase
-import requests
 
 import config
 import directions
