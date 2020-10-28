@@ -15,9 +15,8 @@ firebase_config = {
 firebase = pyrebase.initialize_app(firebase_config)
 db = firebase.database()
 
+
 # Get crimes from Urbana crime API
-
-
 def get_crime():
     year_to_search = 2020
     data_params = {'$where': 'year_occurred = {}'.format(year_to_search)}
@@ -46,8 +45,6 @@ Returns a list of dicts; each dict is of form:
 }
 (where #### is either "user" or "urbana")
 """
-
-
 def parse_crimes():
     # Load Urbana crimes
     crime_data = json.loads(get_crime())
