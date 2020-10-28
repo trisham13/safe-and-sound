@@ -13,6 +13,7 @@ ALLOWED_EXTRA_LEEWAY = .35
 # the dict of crime proximity
 is_point_close_to_crime = dict()
 
+global crime_data
 
 # returns the best route as a polyline
 def get_best_route(location_from, location_to):
@@ -24,6 +25,9 @@ def get_best_route(location_from, location_to):
         'alternatives': 'true'
     }
 
+    global crime_data
+    crime_data = parse_crimes()
+    
     # makes google maps api request
     directions_data = requests.get(
         'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
@@ -63,7 +67,6 @@ def safety_rating(route):
 # calculates the number of crimes near or on a particular route
 def number_of_crimes(route):
     num_crimes = 0
-    crime_data = parse_crimes()
     # list of lat-lng tuples from the crime data
     crime_locs = [(crime['location']['latitude'], crime['location']['longitude']) for crime in crime_data]
     for point in route:
