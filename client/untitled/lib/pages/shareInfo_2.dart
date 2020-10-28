@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,7 +41,7 @@ class ReportBar extends StatefulWidget {
   @override
   _ReportBarState createState() => _ReportBarState();
 }
-
+String crimeType = 'theft';
 /// This is the private State class that goes with MyStatefulWidget.
 class _ReportBarState extends State<ReportBar> {
   String dropdownValue = 'Theft';
@@ -59,6 +61,7 @@ class _ReportBarState extends State<ReportBar> {
       onChanged: (String newValue) {
         setState(() {
           dropdownValue = newValue;
+          crimeType = newValue;
         });
       },
       items: <String>['Theft', 'Assault', 'Burglary', 'Arrest', 'Other']
@@ -80,6 +83,9 @@ class CrimeInfo extends StatefulWidget {
 
 class _CrimeInfoState extends State<CrimeInfo> {
   final _formKey = GlobalKey<FormState>();
+  final databaseReference = FirebaseDatabase.instance.reference();
+  final TextEditingController locationController = TextEditingController();
+  final TextEditingController timeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +95,7 @@ class _CrimeInfoState extends State<CrimeInfo> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
+            controller: locationController,
             decoration: const InputDecoration(
               hintText: 'Location',
             ),
@@ -100,6 +107,7 @@ class _CrimeInfoState extends State<CrimeInfo> {
             },
           ),
           TextFormField(
+            controller: timeController,
             decoration: const InputDecoration(
               hintText: 'Time',
             ),
@@ -118,6 +126,7 @@ class _CrimeInfoState extends State<CrimeInfo> {
                 // the form is invalid.
                 if (_formKey.currentState.validate()) {
                   // Process data.
+                  createRecord();
                 }
               },
               child: Text('Submit'),
@@ -126,6 +135,16 @@ class _CrimeInfoState extends State<CrimeInfo> {
         ],
       ),
     );
+  }
+
+  void createRecord(){
+    databaseReference.child("userCrimes from shareInfo").set({
+      'crime' + timeController.text :{
+        'Location': locationController.text,
+        'Time': timeController.text,
+        'Type': crimeType
+      }
+    });
   }
 }
 
