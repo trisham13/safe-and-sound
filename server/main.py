@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, request, render_template
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import googlemaps
 import pyrebase
@@ -46,18 +46,7 @@ def json_example():
 # Gets data from urbana crime data API and displays it as a JSON
 @app.route('/crime')
 def crime():
-    # You can use a 'year' param (e.g., http://localhost:5000/crime?year=2015 etc.)
-    year_to_search = request.args.get('year')
-
-    # Search for data from 2020 if year is unspecified
-    if year_to_search == None:
-        year_to_search = 2020
-    data_params = {'$where': 'year_occurred = {}'.format(year_to_search)}
-
-    # Use Urbana data and search JSON file for crimes from specified year
-    crime_data = requests.get('https://data.urbanaillinois.us/resource/uj4k-8xe8.json',
-                              params=data_params).text
-    return crime_data
+    return jsonify(parse_crimes())
 
 # Access to html file with '/crime-map'
 @app.route('/crime-map')
