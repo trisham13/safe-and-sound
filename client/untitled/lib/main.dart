@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 void main() => runApp(MyApp());
 
 /// This is the main application widget.
@@ -28,8 +27,8 @@ class MyStatefulWidget extends StatefulWidget {
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(color: Color(0xff74a1c3),fontSize: 20, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle = TextStyle(
+      color: Color(0xff74a1c3), fontSize: 20, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       '// Index 0: DIRECTIONS',
@@ -64,10 +63,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('S a f e & S o u n d', textAlign: TextAlign.center,
-          style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 30)),),
-            backgroundColor: Color(0xff74a1c3),
-
+        title: Text(
+          'S a f e & S o u n d',
+          textAlign: TextAlign.center,
+          style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 30)),
+        ),
+        backgroundColor: Color(0xff74a1c3),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -75,9 +76,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'DIRECTIONS',
-          ),
+              icon: Icon(Icons.explore),
+              label: 'DIRECTIONS',
+              backgroundColor: Color(0xff74a1c3)),
           BottomNavigationBarItem(
             icon: Icon(Icons.report),
             label: 'REPORT',
@@ -85,16 +86,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.vpn_key),
             label: 'MY PLACES',
-          ),BottomNavigationBarItem(
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.update),
             label: 'UPDATES',
-          ),BottomNavigationBarItem(
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'SETTINGS',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff74a1c3),
+        selectedItemColor: Colors.white,
         onTap: _onItemTapped,
       ),
     );
