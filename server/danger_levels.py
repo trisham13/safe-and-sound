@@ -1,8 +1,14 @@
 danger_levels = {
-    'Assault': 8,
-    'Battery': 8,
+    'Assault': 10,
+    'Battery': 10,
+    'Criminal Sexual Assault' : 10,
+    'Kidnapping': 10,
+    'Theft' : 9,
+    'Sex Offenses' : 8,
+    'Burglary' : 8,
+    'Weapons Offenses' : 6,
+    'Driving Under the Influence': 5,
     'Deception & Fraud': 3,
-    'Test Category': 5,
-    'Traffic Offenses': 7,
+    'Traffic Offenses': 3,
     # TODO: Assign danger levels to all crime categories
 }

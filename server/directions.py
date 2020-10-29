@@ -8,7 +8,7 @@ import json
 
 # the closest acceptable distance a point can be from a crime in miles (rn the number is arbritrary)
 MIN_ACCEPTABLE_CRIME_DISTANCE = .75
-ALLOWED_EXTRA_LEEWAY = .35
+ALLOWED_EXTRA_LEEWAY = .15
 
 # the dict of crime proximity
 is_point_close_to_crime = dict()
@@ -58,10 +58,31 @@ def get_best_route(location_from, location_to):
     # return str(directions_data["routes"][idx_of_best_route])
 
 
+def calculate_crime_weight_in_radius(point, crimes, radius):
+    crime_weight = 0
+    # for every crime
+    for crime in crimes:
+        crime_loc = crime['location']['latitude'], crime['location']['longitude']
+        # rn this computes the geodesic dist, I might change it to great-circle distance if that's optimal
+        dist_to_crime = distance.distance(crime_loc, point).miles
+        if dist_to_crime < radius:
+            crime_weight += crime['danger_level']
+    return crime_weight
+
+
+def crime_weightage(route):
+    total_crime_weight = 0
+    # list of lat-lng tuples from the crime data
+    for point in route:
+        total_crime_weight += calculate_crime_weight_in_radius(point, crime_data, MIN_ACCEPTABLE_CRIME_DISTANCE)
+    return total_crime_weight
+
+
 # calculates the safety rating of a route
 def safety_rating(route):
-    return 1 / (number_of_crimes(route) + 1)  # 1 / (... + 1) to avoid division by 0
-    # ^ this line should change based on our best solution
+    return 1 / (crime_weightage(route) + 1)
+    # return 1 / (number_of_crimes(route) + 1)  # 1 / (... + 1) to avoid division by 0
+    # this method should change based on our best solution
 
 
 # calculates the number of crimes near or on a particular route
