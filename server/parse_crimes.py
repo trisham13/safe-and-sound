@@ -17,8 +17,8 @@ firebase = pyrebase.initialize_app(firebase_config)
 db = firebase.database()
 
 
-# Get crimes from Urbana crime API
 def get_crime():
+    """Gets crimes from Urbana crime API: https://data.urbanaillinois.us/resource/uj4k-8xe8.json"""
     year_to_search = 2020
     data_params = {'$where': 'year_occurred = {}'.format(year_to_search)}
 
@@ -32,11 +32,13 @@ def get_crime():
 # Import danger_levels from danger_levels.py
 DANGER_LEVELS = danger_levels.danger_levels
 
-# Assign danger level to crime based on danger_levels
+
 def get_danger_level(crime):
+    """Assign danger level to crime based on `danger_levels`"""
+
     # Default danger level
     danger = 1
-    
+
     # Handle Urbana crimes
     if crime.get('crime_category_description', None) in DANGER_LEVELS:
         danger = DANGER_LEVELS[crime['crime_category_description']]
@@ -44,29 +46,33 @@ def get_danger_level(crime):
     # Handle user-submitted crimes
     if crime.get('crime_category', None) in DANGER_LEVELS:
         danger = DANGER_LEVELS[crime['crime_category']]
-    
+
     return danger
 
-"""
-Get most important info from Urbana crime API
-as well as user-submitted crimes from Firebase database.
 
-Returns a list of dicts; each dict is of form:
-{
-    "crime_category": "Category",
-    "crime_description": "DESCRIPTION",
-    "danger_level": ~,
-    "date_reported": "mm/dd/yyyy",
-    "location": {
-        "latitude": "12.345678",
-        "longitude": "12.345678"
-    },
-    "source": "####_crime_database"
-}
-(where #### is either "user" or "urbana",
-  and   ~   is a rating from 1-10)
-"""
 def parse_crimes():
+    """Gets most important info from Urbana crime API
+    as well as user-submitted crimes from Firebase database.
+
+    Returns
+    ------
+    A ist of dicts; each dict is of the form:
+    ```
+    {
+        "crime_category": "Category",
+        "crime_description": "DESCRIPTION",
+        "danger_level": ~,
+        "date_reported": "mm/dd/yyyy",
+        "location": {
+            "latitude": "12.345678",
+            "longitude": "12.345678"
+        },
+        "source": "####_crime_database"
+    }
+    ```
+    (where #### is either "user" or "urbana",
+    and   ~   is a rating from 1-10)
+    """
     # Load Urbana crimes
     crime_data = json.loads(get_crime())
 
@@ -83,7 +89,7 @@ def parse_crimes():
             continue
         if 'crime_category_description' not in crime:
             continue
-        
+
         # Get danger level (default is 1)
         danger_level = get_danger_level(crime)
 
@@ -104,7 +110,7 @@ def parse_crimes():
     for crime in db.child("userCrimes").get().val():
         # Get danger level
         crime['danger_level'] = get_danger_level(crime)
-        
+
         formatted_crimes.append(crime)
 
     # Sort all by date_reported
