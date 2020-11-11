@@ -10,7 +10,7 @@ class SavedLocations extends StatefulWidget {
 
 class _SavedLocationsState extends State<SavedLocations> {
 
-  List<LocationWidget> dynamicList = [];
+  List<Widget> dynamicList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +51,7 @@ class _SavedLocationsState extends State<SavedLocations> {
                             decoration: const InputDecoration(
                               labelText: 'Starting Point',
                               hintText: '196 Tech Way',
+                              prefixIcon: Icon(Icons.location_pin)
                             ),
                             style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
                           ),
@@ -60,17 +61,19 @@ class _SavedLocationsState extends State<SavedLocations> {
                             decoration: const InputDecoration(
                               labelText: 'Destination',
                               hintText: '100 Grade Lane',
+                              prefixIcon: Icon(Icons.location_pin)
                             ),
                             style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
                           ),
                         )
                       ],
+                    ),
+                    ListView(
+                      children: dynamicList,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
                     )
                   ]
-              ),
-              ListView.builder(
-                itemCount: dynamicList.length,
-                itemBuilder: (_, index) => dynamicList[index],
               )
             ]
         ),
@@ -78,7 +81,7 @@ class _SavedLocationsState extends State<SavedLocations> {
     );
   }
   addLocation(){
-    setState(() {});
+    setState(() { });
     dynamicList.add(new LocationWidget());
   }
 }
@@ -104,6 +107,7 @@ class LocationWidget extends StatelessWidget {
                       decoration: const InputDecoration(
                         labelText: 'Starting Point',
                         hintText: '196 Tech Way',
+                        prefixIcon: Icon(Icons.location_pin)
                       ),
                       style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
                     ),
@@ -113,6 +117,7 @@ class LocationWidget extends StatelessWidget {
                       decoration: const InputDecoration(
                         labelText: 'Destination',
                         hintText: '100 Grade Lane',
+                        prefixIcon: Icon(Icons.location_pin)
                       ),
                       style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
                     ),
