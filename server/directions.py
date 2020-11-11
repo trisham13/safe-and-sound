@@ -162,8 +162,8 @@ def create_routes_json(routes, safety_ratings):
         route_obj['safety_rating'] = safety_ratings[i]
         routes_json['routes'].append(route_obj)
 
-        json.dumps(route_obj)
-        return route_obj
+    json.dumps(routes_json)
+    return routes_json
 
 
 def get_map_data(location_from, location_to):
