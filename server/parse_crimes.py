@@ -56,7 +56,7 @@ def parse_crimes():
 
     Returns
     ------
-    A ist of dicts; each dict is of the form:
+    A list of dicts; each dict is of the form:
     ```
     {
         "crime_category": "Category",
