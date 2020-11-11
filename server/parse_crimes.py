@@ -37,7 +37,7 @@ def get_danger_level(crime):
     """Assign danger level to crime based on `danger_levels`"""
 
     # Default danger level
-    danger = 1
+    danger = None
 
     # Handle Urbana crimes
     if crime.get('crime_category_description', None) in DANGER_LEVELS:
@@ -90,8 +90,10 @@ def parse_crimes():
         if 'crime_category_description' not in crime:
             continue
 
-        # Get danger level (default is 1)
+        # Get danger level (skip crime if danger level doesn't exist)
         danger_level = get_danger_level(crime)
+        if danger_level == None:
+            continue
 
         # Keep relevant information, add crime to formatted_crimes
         formatted_crimes.append({
@@ -108,8 +110,12 @@ def parse_crimes():
 
     # User-submitted crimes:
     for crime in db.child("userCrimes").get().val():
-        # Get danger level
-        crime['danger_level'] = get_danger_level(crime)
+        # Get danger level (skip crime if danger level doesn't exist)
+        danger_level = get_danger_level(crime)
+        if danger_level == None:
+            continue
+
+        crime['danger_level'] = danger_level
 
         formatted_crimes.append(crime)
 
