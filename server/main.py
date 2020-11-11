@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import googlemaps
 import pyrebase
-
+import firebase_handling
 import config
 import directions
 from parse_crimes import parse_crimes
@@ -70,8 +70,9 @@ def get_map_data():
 
 @app.route('/insert-map-data')
 def insert_map_data():
-    query_args = request.args # query params
-    return directions.get_map_data(query_args.get('location_from'), query_args.get('location_to'))
+    post_data = request.form
+    firebase_handling.insert_into_firebase(post_data)
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)  # Saving file will reload the server

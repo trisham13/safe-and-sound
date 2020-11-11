@@ -12,5 +12,5 @@ firebase_config = {
 firebase = pyrebase.initialize_app(firebase_config)
 db = firebase.database()
 
-def insert_into_firebase():
-    pass
+def insert_into_firebase(post_data):
+    db.child("userCrimes").push(post_data)
