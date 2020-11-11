@@ -54,7 +54,7 @@ def get_best_route(location_from, location_to):
     polylines_json = create_json(polylines, safety_ratings)
     return polylines_json
 
-    # # at the moment I'm returning all the relevant data from the API regarding the route we picked as optimal
+    
     # return str(directions_data["routes"][idx_of_best_route])
 
 
@@ -151,3 +151,50 @@ def create_json(decoded_polylines, safety_ratings):
     # convert to json
     json.dumps(polylines_json)
     return polylines_json
+
+def create_routes_json(routes, safety_ratings):
+    routes_json = {}
+    routes_json['routes'] = []
+
+    for i in range(len(routes)):
+        route_obj = {}
+        route_obj['route'] = routes[i]
+        route_obj['safety_rating'] = safety_ratings[i]
+        routes_json['routes'].append(route_obj)
+
+        json.dumps(route_obj)
+        return route_obj
+
+
+def get_map_data(location_from, location_to):
+    data_params = {
+        'origin': location_from,  # location_from,
+        'mode': 'walking',
+        'key': config.maps_api_key,
+        'destination': location_to,  # location_to,
+        'alternatives': 'true'
+    }
+
+    global crime_data
+    crime_data = parse_crimes()
+    
+    # makes google maps api request
+    directions_data = requests.get(
+        'https://maps.googleapis.com/maps/api/directions/json', params=data_params).text
+
+    # converts JSON string to python dict
+    directions_data = ast.literal_eval(directions_data)
+
+    # the polyline we need is in directions_data["routes"][n][overview_polyline][points]
+    polylines = [directions_data["routes"][n]["overview_polyline"]["points"]
+                 for n in range(len(directions_data["routes"]))]
+
+    decoded_polylines = [polyline.decode(i) for i in polylines]
+
+    # safety_ratings is in the form [s,t,..], where s and t are numbers representing
+    # each route's safety weighting. A higher safety rating is better.
+    safety_ratings = [safety_rating(route) for route in decoded_polylines]
+
+    # create readable json out of data
+    routes_json = create_routes_json(directions_data['routes'], safety_ratings)
+    return routes_json
