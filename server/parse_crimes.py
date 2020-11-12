@@ -109,7 +109,10 @@ def parse_crimes():
         })
 
     # User-submitted crimes:
-    for crime in db.child("userCrimes").get().val():
+    for crime_entry in db.child("userCrimes").get().val():
+        # Firebase returns the crimes as an OrderedDict, this sets "crime" to the actual crime data:
+        crime = db.child("userCrimes").get().val()[crime_entry]
+
         # Get danger level (skip crime if danger level doesn't exist)
         danger_level = get_danger_level(crime)
         if danger_level == None:
