@@ -111,6 +111,7 @@ def parse_crimes():
     # User-submitted crimes:
     for crime in db.child("userCrimes").get().val():
         # Get danger level (skip crime if danger level doesn't exist)
+      
         danger_level = get_danger_level(crime)
         if danger_level == None:
             continue
@@ -118,6 +119,7 @@ def parse_crimes():
         crime['danger_level'] = danger_level
 
         formatted_crimes.append(crime)
+       
 
     # Sort all by date_reported
     formatted_crimes = sorted(
