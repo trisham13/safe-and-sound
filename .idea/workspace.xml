@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73dbcaa9-f5a3-45cf-a981-e1d12a2c5bd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/client/untitled/lib/pages/updatedInfo_3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/lib/pages/updatedInfo_3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/team3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/lib/pages/savedLocations_1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/lib/pages/savedLocations_1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +22,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/savedLocationPage" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1iqSgC6E5nsFBBLFQ20BrVCP759" />
@@ -24,6 +37,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -32,6 +46,17 @@
     <option name="myCommands">
       <command value="open team3" />
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="savedLocations_1.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/client/untitled/lib/pages/savedLocations_1.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.savedLocations_1.dart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,5 +70,43 @@
       <updated>1602479875326</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604527557482">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="184" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.798@0.23.1440.798" timestamp="1604527557482" />
+    <state x="100" y="123" width="1240" height="598" key="AVDManager" timestamp="1604521768874">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="100" y="123" width="1240" height="598" key="AVDManager/0.23.1440.798@0.23.1440.798" timestamp="1604521768874" />
+    <state x="257" y="23" key="CommitChangelistDialog2" timestamp="1604529473686">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="257" y="23" key="CommitChangelistDialog2/0.23.1440.798@0.23.1440.798" timestamp="1604529473686" />
+    <state width="1398" height="192" key="GridCell.Tab.0.bottom" timestamp="1604527471477">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1604527471477" />
+    <state width="1398" height="192" key="GridCell.Tab.0.center" timestamp="1604527471476">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1604527471476" />
+    <state width="1398" height="192" key="GridCell.Tab.0.left" timestamp="1604527471474">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1604527471474" />
+    <state width="1398" height="192" key="GridCell.Tab.0.right" timestamp="1604527471477">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1604527471477" />
+    <state x="308" y="172" key="IDE.errors.dialog" timestamp="1604521925565">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="308" y="172" key="IDE.errors.dialog/0.23.1440.798@0.23.1440.798" timestamp="1604521925565" />
+    <state x="444" y="142" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604521556292">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="444" y="142" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.798@0.23.1440.798" timestamp="1604521556292" />
   </component>
 </project>

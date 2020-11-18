@@ -1,134 +1,101 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(SavedLocations());
 
-class SavedLocations extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Safe and Sound',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Saved Locations'),
-        ),
-        body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget> [
-              IconButton(
-                onPressed: () { },
-                alignment: Alignment.topRight,
-                icon: Icon(Icons.add),
-                tooltip: 'Add a new Location',
-              ),
-              Container(
-                  child: Column (
-                      children: <Widget>[
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Name',
-                            hintText: 'Work',
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Flexible(
-                              child: TextFormField(
-                                decoration: const InputDecoration(
-                                  labelText: 'Starting Point',
-                                  hintText: '196 Tech Way',
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              child: TextFormField(
-                                decoration: const InputDecoration(
-                                  labelText: 'Destination',
-                                  hintText: '100 Grade Lane',
-                                ),
-                              ),
-                            )
-                          ],
-                        )
-                      ]
-                  )
-              )
-            ]
-        ),
-      ),
-    );
-  }
-}
-
-/*
 class SavedLocations extends StatefulWidget {
   @override
-  _SavedLocationsState createState() =>
-      new _SavedLocationsState();
+  _SavedLocationsState createState() => _SavedLocationsState();
 }
 
 class _SavedLocationsState extends State<SavedLocations> {
-  int _count = 1;
+
+  List<Widget> dynamicList;
+  List<String> litem;
+
+  @override
+  initState() {
+    super.initState();
+    dynamicList = [new LocationWidget()];
+    litem = ["Test1", "Test2", "Test4", "Test5", "Test6", "Test7", "Test8"];
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> _locations = new List.generate(_count, (int i) => new Location());
     return MaterialApp(
       title: 'Safe and Sound',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Saved Locations'),
+          centerTitle: true,
+          title: Text(
+            'S a v e d  L o c a t i o n s',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 30)),
+          ),
+          backgroundColor: Color(0xff74a1c3),
         ),
         body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget> [
-              IconButton(
-                onPressed: _addNewLocation(),
-                alignment: Alignment.topRight,
-                icon: Icon(Icons.add),
-                tooltip: 'Add a new Location',
-              ),
-              ListView(
-                children: _locations,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget> [
+            IconButton(
+              onPressed: addLocation,
+              alignment: Alignment.topRight,
+              icon: Icon(Icons.add),
+              tooltip: 'Add a new Location',
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: dynamicList.length,
+                itemBuilder: (context, index) {
+                  return dynamicList[index];
+                },
               )
-            ]
+            )
+          ]
         ),
       ),
     );
   }
-  _addNewLocation() {
-    setState(() {
-      _count = _count + 1;
-    });
+  addLocation(){
+    dynamicList.add(new LocationWidget());
+    setState(() { });
   }
 }
 
-class Location extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => new _Location();
-}
+class LocationWidget extends StatelessWidget {
 
-class _Location extends State<Location> {
   @override
   Widget build(BuildContext context) {
-    return new Container(
-        child:
-        new Column(
+    return Container(
+        child: Column (
             children: <Widget>[
-              new TextFormField(
-                decoration: new InputDecoration(
+              TextFormField(
+                decoration: const InputDecoration(
                   labelText: 'Name',
+                  hintText: 'Work',
                 ),
+                style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
               ),
-              new Row(
+              Row(
                 children: [
-                  TextFormField(
-                    decoration: new InputDecoration(
-                      labelText: 'Starting Point',
+                  Flexible(
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Starting Point',
+                        hintText: '196 Tech Way',
+                        prefixIcon: Icon(Icons.location_pin)
+                      ),
+                      style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
                     ),
                   ),
-                  TextFormField(
-                    decoration: new InputDecoration(
-                      labelText: 'Destination',
+                  Flexible(
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Destination',
+                        hintText: '100 Grade Lane',
+                        prefixIcon: Icon(Icons.location_pin)
+                      ),
+                      style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
                     ),
                   )
                 ],
@@ -137,4 +104,4 @@ class _Location extends State<Location> {
         )
     );
   }
-}*/
+}

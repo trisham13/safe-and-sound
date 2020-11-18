@@ -1,0 +1,20 @@
+[{
+  "crime_category": "Test Category",
+  "crime_description": "BAD THING",
+  "date_reported": "01/23/2020",
+  "location": {
+    "latitude": "40.136525",
+    "longitude": "-88.222144"
+  },
+  "source": "user_crime_database"
+},
+{
+  "crime_category": "Other Test Category",
+  "crime_description": "OTHER BAD THING",
+  "date_reported": "10/24/2020",
+  "location": {
+    "latitude": "40.122071",
+    "longitude": "-88.197211"
+  },
+  "source": "user_crime_database"
+}]
