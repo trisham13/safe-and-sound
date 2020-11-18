@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
 
+/// This is the main application widget.
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
