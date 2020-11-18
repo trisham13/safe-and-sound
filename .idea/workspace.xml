@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73dbcaa9-f5a3-45cf-a981-e1d12a2c5bd7" name="Default Changelist" comment="">
+
+      <change beforePath="$PROJECT_DIR$/client/untitled/lib/pages/updatedInfo_3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/lib/pages/updatedInfo_3.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/team3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/untitled/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/ios/Flutter/Debug.xcconfig" afterDir="false" />
