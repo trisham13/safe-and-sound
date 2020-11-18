@@ -63,6 +63,7 @@ def parse_crimes():
         "crime_description": "DESCRIPTION",
         "danger_level": ~,
         "date_reported": "mm/dd/yyyy",
+        "id": "*"
         "location": {
             "latitude": "12.345678",
             "longitude": "12.345678"
@@ -71,6 +72,7 @@ def parse_crimes():
     }
     ```
     (where #### is either "user" or "urbana",
+    * is some integer,
     and   ~   is a rating from 1-10)
     """
     # Load Urbana crimes
@@ -112,7 +114,7 @@ def parse_crimes():
             'source': 'urbana_crime_database'
         })
         id+=1
-    
+    '''
     # User-submitted crimes:
     for crime_entry in db.child("userCrimes").get().val():
         # Firebase returns the crimes as an OrderedDict, this sets "crime" to the actual crime data:
@@ -128,7 +130,7 @@ def parse_crimes():
 
         formatted_crimes.append(crime)
        
-    
+    '''
     # Sort all by date_reported
     formatted_crimes = sorted(
         formatted_crimes, key=lambda x: datetime.strptime(x['date_reported'], '%m/%d/%Y'))

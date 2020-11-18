@@ -8,6 +8,7 @@ import firebase_handling
 import config
 import directions
 from parse_crimes import parse_crimes
+from make_markers import make_markers
 
 
 # Google Maps API client -- everything goes through here
@@ -67,6 +68,10 @@ def get_directions():
 def get_map_data():
     query_args = request.args # query params
     return directions.get_map_data(query_args.get('location_from'), query_args.get('location_to'))
+
+@app.route('/get-markers')
+def get_marker():
+    return make_markers()
 
 @app.route('/insert-map-data', methods=['GET', 'POST'])
 def insert_map_data():
