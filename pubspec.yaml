@@ -1,5 +1,5 @@
-name: untitled
-description: A safewalks app.
+name: flutter_homepage
+description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -21,13 +21,10 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  firebase_core: ^0.4.0+9
   flutter:
     sdk: flutter
-
   firebase_database: ^3.1.0
-  firebase_core: ^0.4.0+9
-  google_fonts: ^1.0.0
-
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -48,9 +45,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - Image/
+
   # To add assets to your application, add an assets section, like this:
   # assets:
-  #   - google_fonts/
+  #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

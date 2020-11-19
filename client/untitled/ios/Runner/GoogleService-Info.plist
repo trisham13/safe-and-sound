@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1025509003339-3j8el16nub200dtj8n0v90jtj11tm5an.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1025509003339-3j8el16nub200dtj8n0v90jtj11tm5an</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDqbI5g2jBhh2phUbAwwAA6kcaAUXlUGcc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1025509003339</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.untitled</string>
+	<key>PROJECT_ID</key>
+	<string>fa20team3project</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fa20team3project.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1025509003339:ios:4cc127c402b84e946a7dce</string>
+	<key>DATABASE_URL</key>
+	<string>https://fa20team3project.firebaseio.com</string>
+</dict>
+</plist>
