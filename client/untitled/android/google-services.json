@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1025509003339",
+    "firebase_url": "https://fa20team3project.firebaseio.com",
+    "project_id": "fa20team3project",
+    "storage_bucket": "fa20team3project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025509003339:android:8d6d640a257e09b06a7dce",
+        "android_client_info": {
+          "package_name": "com.example.untitled"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025509003339-6tbg3p7u4im6emaipkhv97g046t2r09a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA2IBLOQr99R3xtywJKDQ8wOpCYbCxpG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025509003339-6tbg3p7u4im6emaipkhv97g046t2r09a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1025509003339-3j8el16nub200dtj8n0v90jtj11tm5an.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.untitled"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

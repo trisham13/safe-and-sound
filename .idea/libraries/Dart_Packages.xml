@@ -68,6 +68,7 @@
         <entry key="firebase_core">
           <value>
             <list>
+              <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.5.2+1/lib" />
               <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.5/lib" />
             </list>
           </value>
@@ -75,6 +76,7 @@
         <entry key="firebase_core_platform_interface">
           <value>
             <list>
+              <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.1.0/lib" />
               <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-1.0.4/lib" />
             </list>
           </value>
@@ -82,6 +84,7 @@
         <entry key="firebase_core_web">
           <value>
             <list>
+              <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.1+1/lib" />
               <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2/lib" />
             </list>
           </value>
@@ -89,6 +92,7 @@
         <entry key="firebase_database">
           <value>
             <list>
+              <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-4.3.0/lib" />
               <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-3.1.6/lib" />
             </list>
           </value>
@@ -253,9 +257,13 @@
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.1.0/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase-7.3.2/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.5/lib" />
+      <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.5.2+1/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-1.0.4/lib" />
+      <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.1.0/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.1.1+2/lib" />
+      <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.1+1/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-3.1.6/lib" />
+      <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-4.3.0/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.2/lib" />
