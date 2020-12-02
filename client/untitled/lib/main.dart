@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
@@ -38,7 +40,9 @@ class Home extends StatelessWidget {
                     color: Color(0xff4eb14e), //0xff58a758
                     child: InkWell(
                       splashColor: Colors.red,
-                      onTap: () {}, // not only dial, but call 911
+                      onLongPress: () async {
+                        FlutterPhoneDirectCaller.callNumber("911");
+                      }, //_launchURL, // () => launch('tel://911')
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
