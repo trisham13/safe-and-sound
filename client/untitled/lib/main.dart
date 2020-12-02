@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
-// import 'package:intent/intent.dart' as android_intent;
-// import 'package:intent/action.dart' as android_action;
-
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
 
@@ -93,19 +89,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-/*
-_callNumber() async {
-  const number = '911'; //set the number here
-  bool res = await FlutterPhoneDirectCaller.callNumber(number);
-} */
-
-/*
-_launchURL() async {
-  // Replace 12345678 with your tel. no.
-
-  android_intent.Intent()
-    ..setAction(android_action.Action.ACTION_CALL)
-    ..setData(Uri(scheme: "tel", path: "9375459038"))
-    ..startActivity().catchError((e) => print(e));
-}*/
