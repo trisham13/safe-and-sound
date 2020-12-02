@@ -80,4 +80,4 @@ def insert_map_data():
     return post_data
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)  # Saving file will reload the server
+    app.run(threaded=True, port=5000)  # Saving file will reload the server
