@@ -1,0 +1,4 @@
+.idea
+.vscode
+build/ios/Runner.build/Release-iphoneos/Runner.build/dgph~
+ios/.DS_Store
