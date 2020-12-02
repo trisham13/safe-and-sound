@@ -2,7 +2,6 @@ import json
 
 from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
-import googlemaps
 import pyrebase
 import firebase_handling
 import config
@@ -10,10 +9,6 @@ import directions
 from parse_crimes import parse_crimes
 from make_markers import make_markers
 
-
-# Google Maps API client -- everything goes through here
-# email and password for associated account in Discord
-gmaps = googlemaps.Client(key=config.maps_api_key)
 
 app = Flask(__name__)
 
@@ -76,8 +71,13 @@ def get_marker():
 @app.route('/insert-map-data', methods=['GET', 'POST'])
 def insert_map_data():
     post_data = request.form
-    # firebase_handling.insert_into_firebase(post_data)
+    firebase_handling.insert_into_firebase(post_data)
     return post_data
+
+@app.route('/geocode', methods=['GET', 'POST'])
+def geocode_address():
+    query_args = request.args  # query params
+    return directions.geocode(query_args.get("address"))
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)  # Saving file will reload the server

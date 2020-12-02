@@ -198,3 +198,11 @@ def get_map_data(location_from, location_to):
     # create readable json out of data
     routes_json = create_routes_json(directions_data['routes'], safety_ratings)
     return routes_json
+
+
+def geocode(address):
+    returned_string = requests.get(
+        "https://maps.googleapis.com/maps/api/geocode/json?"
+        "address=" + address + "&key=" + config.maps_api_key)
+    geocoded_json = json.loads(returned_string.text)
+    return geocoded_json["results"][0]["geometry"]["location"]
