@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:team3/pages/directions_0.dart'
-
 import 'package:untitled/pages/shareInfo_2.dart';
 import 'package:untitled/pages/directions_0.dart';
 import 'package:untitled/pages/updatedInfo_3.dart';
@@ -35,7 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = [
-    DirectionsPage(),
+    DirectionView(),
     ShareInfoPage(),
     SavedLocations(),
     Updates(),
