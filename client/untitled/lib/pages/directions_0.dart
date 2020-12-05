@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(DirectionView());
 
@@ -126,6 +127,15 @@ class _DirectionViewState extends State<DirectionView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Directions',
+          style: GoogleFonts.teko(
+              textStyle: TextStyle(color: Color(0xff74a1c3), fontSize: 30)),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+      ),
       body: Column(
         children: [
           Container(
@@ -136,21 +146,18 @@ class _DirectionViewState extends State<DirectionView> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    'Directions',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
                   SizedBox(
                     height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text('Starting Point'),
+                      Text(
+                        'Starting Point',
+                        style: GoogleFonts.teko(
+                            textStyle: TextStyle(color: Colors.white),
+                            fontSize: 20),
+                      ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: TextField(
@@ -175,7 +182,10 @@ class _DirectionViewState extends State<DirectionView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text('Ending Point'),
+                      Text('Ending Point',
+                          style: GoogleFonts.teko(
+                              textStyle: TextStyle(color: Colors.white),
+                              fontSize: 20)),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: TextField(
@@ -201,10 +211,24 @@ class _DirectionViewState extends State<DirectionView> {
                     //Four mid buttons
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Chip(label: Text('Walk')),
-                      Chip(label: Text('Bike')),
-                      Chip(label: Text('Bus')),
-                      Chip(label: Text('Car')),
+                      Chip(
+                          label: Text(
+                        'Walk',
+                        style: GoogleFonts.teko(
+                            textStyle: TextStyle(color: Colors.black)),
+                      )),
+                      Chip(
+                          label: Text('Bike',
+                              style: GoogleFonts.teko(
+                                  textStyle: TextStyle(color: Colors.black)))),
+                      Chip(
+                          label: Text('Bus',
+                              style: GoogleFonts.teko(
+                                  textStyle: TextStyle(color: Colors.black)))),
+                      Chip(
+                          label: Text('Car',
+                              style: GoogleFonts.teko(
+                                  textStyle: TextStyle(color: Colors.black)))),
                     ],
                   ),
                   SizedBox(
@@ -215,21 +239,23 @@ class _DirectionViewState extends State<DirectionView> {
                     color: Colors.teal,
                     onPressed: (_startPoint != '' && _endPoint != '')
                         ? () async {
-                      startFocusNode.unfocus();
-                      endFocusNode.unfocus();
-                      setState(() {
-                        if (markers.isNotEmpty) markers.clear();
-                      });
+                            startFocusNode.unfocus();
+                            endFocusNode.unfocus();
+                            setState(() {
+                              if (markers.isNotEmpty) markers.clear();
+                            });
 
-                      getMarkers();
-                    }
+                            getMarkers();
+                          }
                         : () {},
                     child: Text(
                       'Map',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                      style: GoogleFonts.teko(
+                        textStyle: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
                       ),
                     ),
                   ),

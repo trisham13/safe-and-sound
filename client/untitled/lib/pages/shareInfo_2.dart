@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(ShareInfoPage());
 
@@ -12,15 +13,27 @@ class ShareInfoPage extends StatelessWidget {
     return MaterialApp(
       title: _title,
       home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
+        appBar: AppBar(
+          title: Text(
+            'Report',
+            style: GoogleFonts.teko(
+                textStyle: TextStyle(color: Color(0xff74a1c3), fontSize: 30)),
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+        ),
         body: Center(
           child: Column(
             children: <Widget>[
               Text(
                 'Type of crime:',
                 textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, height: 3, fontSize: 20),
+                style: GoogleFonts.teko(
+                    textStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  height: 3,
+                  fontSize: 20,
+                )),
               ),
               ReportBar(),
               CrimeInfo()
@@ -93,13 +106,13 @@ class _CrimeInfoState extends State<CrimeInfo> {
     return Form(
       key: _formKey,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
             controller: locationController,
             decoration: const InputDecoration(
-              hintText: 'Location',
+              hintText: '     Location',
             ),
+            style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
             validator: (value) {
               if (value.isEmpty) {
                 return 'Please enter some text';
@@ -110,8 +123,9 @@ class _CrimeInfoState extends State<CrimeInfo> {
           TextFormField(
             controller: timeController,
             decoration: const InputDecoration(
-              hintText: 'Time',
+              hintText: '     Time',
             ),
+            style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
             validator: (value) {
               if (value.isEmpty) {
                 return 'Please enter some text';
@@ -119,19 +133,25 @@ class _CrimeInfoState extends State<CrimeInfo> {
               return null;
             },
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: RaisedButton(
-              onPressed: () {
-                // Validate will return true if the form is valid, or false if
-                // the form is invalid.
-                if (_formKey.currentState.validate()) {
-                  // Process data.
-                  createRecord();
-                }
-              },
-              child: Text('Submit'),
-            ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: RaisedButton(
+                  onPressed: () {
+                    // Validate will return true if the form is valid, or false if
+                    // the form is invalid.
+                    if (_formKey.currentState.validate()) {
+                      // Process data.
+                      createRecord();
+                    }
+                  },
+                  child: Text('Submit', style: GoogleFonts.teko()),
+                ),
+              ),
+            ],
           ),
         ],
       ),
