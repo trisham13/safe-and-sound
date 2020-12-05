@@ -1,12 +1,30 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/rendering.dart';
 
-void main() => runApp(ShareInfoPage());
+//void main() => runApp(MyApp());
+
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 /// This is the main application widget.
-class ShareInfoPage extends StatelessWidget {
+class MyApp extends StatelessWidget {
   static const String _title = 'Report';
+
+  /*
+  @override
+  public void onCreate() {
+    super.onCreate();
+    FirebaseApp.initializeApp(this);
+  }
+
+   */
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +70,7 @@ class ReportBar extends StatefulWidget {
   @override
   _ReportBarState createState() => _ReportBarState();
 }
-
 String crimeType = 'theft';
-
 /// This is the private State class that goes with MyStatefulWidget.
 class _ReportBarState extends State<ReportBar> {
   String dropdownValue = 'Theft';
@@ -87,7 +103,6 @@ class _ReportBarState extends State<ReportBar> {
     );
   }
 }
-
 class CrimeInfo extends StatefulWidget {
   CrimeInfo({Key key}) : super(key: key);
 
@@ -158,9 +173,9 @@ class _CrimeInfoState extends State<CrimeInfo> {
     );
   }
 
-  void createRecord() {
+  void createRecord(){
     databaseReference.child("userCrimes from shareInfo").set({
-      'crime' + timeController.text: {
+      'crime' + timeController.text :{
         'Location': locationController.text,
         'Time': timeController.text,
         'Type': crimeType
@@ -168,3 +183,5 @@ class _CrimeInfoState extends State<CrimeInfo> {
     });
   }
 }
+
+
