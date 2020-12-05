@@ -8,27 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76e7deb5-9e63-49d6-a0e8-f756aef804eb" name="Default Changelist" comment="add workspace.xml">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/untitled/android/app/google-services.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/untitled/android/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/untitled/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/untitled/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/untitled/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/android/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/untitled/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/untitled/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/untitled/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/untitled/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_30]" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="shareInfoBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,7 +48,55 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="AndroidRunConfigurationType" factoryName="Android App" nameIsGenerated="true">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="team3" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="team3" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="shareInfo_2.dart" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="team3" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -110,57 +150,6 @@
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="team3" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="team3" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Android App.Unnamed" />
-      <item itemvalue="Flutter.shareInfo_2.dart" />
-    </list>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="team3" />
       <option name="VM_PARAMETERS" />
@@ -262,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606624142780</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add workspace.xml">
+      <created>1607207161084</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607207161084</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,7 +283,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="add workspace.xml" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607205851644">
+    <state x="277" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607207541718">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.823@0.23.1440.823" timestamp="1603924573982" />
@@ -296,7 +292,7 @@
     <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.827@0.23.1440.827" timestamp="1602429837596" />
     <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.828@0.23.1440.828" timestamp="1606099603529" />
     <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.829@0.23.1440.829" timestamp="1606103263465" />
-    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.830@0.23.1440.830" timestamp="1607205851644" />
+    <state x="277" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.830@0.23.1440.830" timestamp="1607207541718" />
     <state x="376" y="243" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606619040851">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -314,10 +310,11 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="451" y="127" width="737" height="559" key="#main.dart/0.23.1440.826@0.23.1440.826" timestamp="1602463815188" />
-    <state x="375" y="164" width="737" height="559" key="#shareInfo_2.dart" timestamp="1602463884016">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state x="375" y="26" width="737" height="559" key="#shareInfo_2.dart" timestamp="1607207612031">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="375" y="164" width="737" height="559" key="#shareInfo_2.dart/0.23.1440.826@0.23.1440.826" timestamp="1602463884016" />
+    <state x="375" y="26" key="#shareInfo_2.dart/0.23.1440.830@0.23.1440.830" timestamp="1607207612031" />
     <state x="100" y="125" width="1240" height="624" key="AVDManager" timestamp="1606950484048">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
@@ -385,6 +382,14 @@
     <state width="483" height="269" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1606951497653" />
     <state width="1398" height="275" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1606102479781" />
     <state width="1398" height="273" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1606170548018" />
+    <state x="144" y="95" key="MergeDialog" timestamp="1607207420103">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="144" y="95" key="MergeDialog/0.23.1440.830@0.23.1440.830" timestamp="1607207420103" />
+    <state x="356" y="206" key="MultipleFileMergeDialog" timestamp="1607207420191">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="356" y="206" key="MultipleFileMergeDialog/0.23.1440.830@0.23.1440.830" timestamp="1607207420191" />
     <state x="471" y="143" key="RollbackChangesDialog" timestamp="1606098652567">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
@@ -418,10 +423,10 @@
     <state x="390" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1602379902533" />
     <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.827@0.23.1440.827" timestamp="1603055275640" />
     <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.828@0.23.1440.828" timestamp="1603081022866" />
-    <state x="444" y="159" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607205725663">
+    <state x="444" y="159" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607207299972">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state x="444" y="159" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.830@0.23.1440.830" timestamp="1607205725663" />
+    <state x="444" y="159" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.830@0.23.1440.830" timestamp="1607207299972" />
     <state x="430" y="234" key="git4idea.merge.GitPullDialog" timestamp="1606624399595">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -441,7 +446,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/client/untitled/lib/pages/shareInfo_2.dart</url>
-          <line>144</line>
+          <line>149</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
