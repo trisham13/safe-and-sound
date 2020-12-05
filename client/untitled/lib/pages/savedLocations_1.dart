@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(SavedLocations());
 
@@ -9,14 +10,14 @@ class SavedLocations extends StatefulWidget {
 }
 
 class _SavedLocationsState extends State<SavedLocations> {
-  List<Widget> dynamicList;
   List<String> litem;
+  static List<Widget> dynamicList;
 
   @override
+  // ignore: override_on_non_overriding_member
   initState() {
     super.initState();
     dynamicList = [new LocationWidget()];
-    litem = ["Test1", "Test2", "Test4", "Test5", "Test6", "Test7", "Test8"];
   }
 
   @override
@@ -61,13 +62,18 @@ class _SavedLocationsState extends State<SavedLocations> {
 }
 
 class LocationWidget extends StatelessWidget {
+  final nameController = TextEditingController();
+  final startController = TextEditingController();
+  final endController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
         child: Column(children: <Widget>[
-      TextFormField(
+      TextField(
+        controller: nameController,
         decoration: const InputDecoration(
-          labelText: '    Name',
+          labelText: '     Name',
           hintText: '     Work',
         ),
         style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
@@ -75,7 +81,8 @@ class LocationWidget extends StatelessWidget {
       Row(
         children: [
           Flexible(
-            child: TextFormField(
+            child: TextField(
+              controller: startController,
               decoration: const InputDecoration(
                   labelText: 'Starting Point',
                   hintText: '196 Tech Way',
@@ -84,16 +91,31 @@ class LocationWidget extends StatelessWidget {
             ),
           ),
           Flexible(
-            child: TextFormField(
+            child: TextField(
+              controller: endController,
               decoration: const InputDecoration(
                   labelText: 'Destination',
                   hintText: '100 Grade Lane',
                   prefixIcon: Icon(Icons.location_pin)),
               style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
             ),
-          )
+          ),
         ],
-      )
+      ),
+      OutlinedButton(
+          child: Text("Submit", style: GoogleFonts.teko()),
+          onPressed: () async {
+            saveLocation(nameController.text ?? "", startController.text ?? "",
+                endController.text ?? "");
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            print(prefs.getStringList(nameController.text) ?? "");
+          })
     ]));
+  }
+
+  saveLocation(String name, String start, String end) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> route = <String>[start, end];
+    prefs.setStringList(name, route);
   }
 }
