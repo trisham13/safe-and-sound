@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Updates());
 
 class Updates extends StatelessWidget {
   @override
@@ -11,19 +11,15 @@ class Updates extends StatelessWidget {
         appBar: AppBar(
           title: Text('Updates'),
         ),
-        body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: Text('\n\nNear Me:')),
-              Expanded(child: Text('Near Home:')),
-              Expanded(child: Text('Near Work:')),
-              Flexible(child: TextFormField(
-                decoration: const InputDecoration(
-                    labelText: 'Near:'
-                ),
-              )),
-            ]
-        ),
+        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Expanded(child: Text('     Near Me:')),
+          Expanded(child: Text('     Near Home:')),
+          Expanded(child: Text('     Near Work:')),
+          Flexible(
+              child: TextFormField(
+            decoration: const InputDecoration(labelText: '     Near:'),
+          )),
+        ]),
       ),
     );
   }

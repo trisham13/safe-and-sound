@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import './pages/directions_0.dart';
-// import './pages/savedLocations_1.dart';
-// import './widgets/settings_4.dart';
-// import './pages/shareInfo_2.dart';
-// import './pages/updatedInfo_3.dart';
 
-void main() => runApp(MyApp());
+import 'package:untitled/pages/shareInfo_2.dart';
+import 'package:untitled/pages/directions_0.dart';
+import 'package:untitled/pages/updatedInfo_3.dart';
+import 'package:untitled/pages/savedLocations_1.dart';
+
+void main() => runApp(MainPage());
 
 /// This is the main application widget.
-class MyApp extends StatelessWidget {
+class MainPage extends StatelessWidget {
   static const String _title = 'Safe&Sound';
 
   @override
@@ -32,29 +32,12 @@ class MyStatefulWidget extends StatefulWidget {
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(
-      color: Color(0xff74a1c3), fontSize: 20, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '// Index 0: DIRECTIONS',
-      style: optionStyle,
-    ),
-    Text(
-      '// Index 1: REPORT',
-      style: optionStyle,
-    ),
-    Text(
-      '// Index 2: MY PLACES',
-      style: optionStyle,
-    ),
-    Text(
-      '// Index 3: UPDATES',
-      style: optionStyle,
-    ),
-    Text(
-      '// Index 4: SETTINGS',
-      style: optionStyle,
-    ),
+
+  final List<Widget> _widgetOptions = [
+    DirectionsPage(),
+    ShareInfoPage(),
+    SavedLocations(),
+    Updates(),
   ];
 
   void _onItemTapped(int index) {
@@ -79,6 +62,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xff74a1c3),
+        type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.explore),
@@ -95,10 +80,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.update),
             label: 'UPDATES',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'SETTINGS',
           ),
         ],
         currentIndex: _selectedIndex,

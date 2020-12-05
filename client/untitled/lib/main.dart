@@ -3,6 +3,8 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:untitled/pages/main_page.dart';
+
 void main() => runApp(MyApp());
 
 /// This is the main application widget.
@@ -12,7 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Default Font',
         theme: ThemeData(fontFamily: 'teko'),
-        home: Home());
+        home: Home(),
+        routes: <String, WidgetBuilder>{
+          '/a': (BuildContext context) => MainPage(),
+        });
   }
 }
 
@@ -68,7 +73,9 @@ class Home extends StatelessWidget {
           style: GoogleFonts.teko(textStyle: TextStyle(fontSize: 20)),
         ),
         backgroundColor: Color(0xff74a1c3),
-        onPressed: () {}, // to page_0
+        onPressed: () {
+          Navigator.pushNamed(context, '/a');
+        }, // to page_0
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
