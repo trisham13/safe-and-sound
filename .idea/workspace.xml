@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76e7deb5-9e63-49d6-a0e8-f756aef804eb" name="Default Changelist" comment="add workspace.xml">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/untitled/android/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/untitled/android/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/untitled/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/client/untitled/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1i4EEXNHAHGRfAy5wJN6ALAFhw9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/untitled/ios/Runner/Assets.xcassets" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/untitled/ios/Runner/Assets.xcassets" />
+      <recent name="$PROJECT_DIR$/client/untitled/ios/Runner" />
+      <recent name="$PROJECT_DIR$/Image" />
+      <recent name="$PROJECT_DIR$/lib/image" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="AndroidRunConfigurationType" factoryName="Android App" nameIsGenerated="true">
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="team3" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="team3" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76e7deb5-9e63-49d6-a0e8-f756aef804eb" name="Default Changelist" comment="" />
+      <created>1601158352241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601158352241</updated>
+    </task>
+    <task id="LOCAL-00001" summary="A flutter page with my bio">
+      <created>1602380146628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602380146628</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added the share info page">
+      <created>1602640411258</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602640411258</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Attempted to connect the FireBase with the ShareInfo page">
+      <created>1603902102171</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603902102171</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed import">
+      <created>1605742463080</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605742463080</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Connected my code to the database">
+      <created>1606623713097</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606623713097</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add workspace.xml">
+      <created>1606624142779</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606624142780</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="A flutter page with my bio" />
+    <MESSAGE value="Added the share info page" />
+    <MESSAGE value="Attempted to connect the FireBase with the ShareInfo page" />
+    <MESSAGE value="Fixed import" />
+    <MESSAGE value="Connected my code to the database" />
+    <MESSAGE value="add workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="add workspace.xml" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607205851644">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.823@0.23.1440.823" timestamp="1603924573982" />
+    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.825@0.23.1440.825" timestamp="1603316967070" />
+    <state x="99" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.826@0.23.1440.826" timestamp="1602463800327" />
+    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.827@0.23.1440.827" timestamp="1602429837596" />
+    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.828@0.23.1440.828" timestamp="1606099603529" />
+    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.829@0.23.1440.829" timestamp="1606103263465" />
+    <state x="208" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.830@0.23.1440.830" timestamp="1607205851644" />
+    <state x="376" y="243" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606619040851">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="376" y="243" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.826@0.23.1440.826" timestamp="1606619040851" />
+    <state x="376" y="244" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.828@0.23.1440.828" timestamp="1603077315260" />
+    <state x="481" y="240" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1602463881058">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="481" y="240" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1440.826@0.23.1440.826" timestamp="1602463881058" />
+    <state x="408" y="177" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603152777014">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="408" y="177" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.826@0.23.1440.826" timestamp="1603152777014" />
+    <state x="451" y="127" width="737" height="559" key="#main.dart" timestamp="1602463815188">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="451" y="127" width="737" height="559" key="#main.dart/0.23.1440.826@0.23.1440.826" timestamp="1602463815188" />
+    <state x="375" y="164" width="737" height="559" key="#shareInfo_2.dart" timestamp="1602463884016">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="375" y="164" width="737" height="559" key="#shareInfo_2.dart/0.23.1440.826@0.23.1440.826" timestamp="1602463884016" />
+    <state x="100" y="125" width="1240" height="624" key="AVDManager" timestamp="1606950484048">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="100" y="125" width="1240" height="624" key="AVDManager/0.23.1440.827@0.23.1440.827" timestamp="1606950484048" />
+    <state x="308" y="196" key="AndroidCreateResourceDirectoryDialog" timestamp="1603073698149">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="308" y="196" key="AndroidCreateResourceDirectoryDialog/0.23.1440.826@0.23.1440.826" timestamp="1603073698149" />
+    <state x="363" y="23" width="884" height="826" key="CommitChangelistDialog2" timestamp="1607205812286">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="363" y="23" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1603902099913" />
+    <state x="363" y="23" width="884" height="825" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1605742462772" />
+    <state x="363" y="23" width="884" height="826" key="CommitChangelistDialog2/0.23.1440.826@0.23.1440.826" timestamp="1606624387524" />
+    <state x="363" y="23" key="CommitChangelistDialog2/0.23.1440.830@0.23.1440.830" timestamp="1607205812286" />
+    <state x="100" y="125" width="1240" height="624" key="DiffContextDialog" timestamp="1606624553325">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="100" y="125" width="1240" height="624" key="DiffContextDialog/0.23.1440.826@0.23.1440.826" timestamp="1606624553325" />
+    <state width="483" height="269" key="GridCell.Tab.0.bottom" timestamp="1607110286141">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1398" height="211" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1602784980463" />
+    <state width="1398" height="210" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1601242636376" />
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1602646001732" />
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1602639906316" />
+    <state width="483" height="269" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1607110286141" />
+    <state width="483" height="269" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1606949955090" />
+    <state width="483" height="269" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1606951497654" />
+    <state width="1398" height="275" key="GridCell.Tab.0.bottom/0.23.1440.828@0.23.1440.828" timestamp="1606102479782" />
+    <state width="1398" height="273" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1606170548018" />
+    <state width="483" height="269" key="GridCell.Tab.0.center" timestamp="1607110286141">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1398" height="211" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1602784980462" />
+    <state width="1398" height="210" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1601242636375" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1602646001732" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1602639906314" />
+    <state width="483" height="269" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1607110286141" />
+    <state width="483" height="269" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1606949955090" />
+    <state width="483" height="269" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1606951497652" />
+    <state width="1398" height="275" key="GridCell.Tab.0.center/0.23.1440.828@0.23.1440.828" timestamp="1606102479781" />
+    <state width="1398" height="273" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1606170548018" />
+    <state width="483" height="269" key="GridCell.Tab.0.left" timestamp="1607110286141">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1398" height="211" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1602784980462" />
+    <state width="1398" height="210" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1601242636375" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1602646001731" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1602639906313" />
+    <state width="483" height="269" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1607110286141" />
+    <state width="483" height="269" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1606949955090" />
+    <state width="483" height="269" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1606951497652" />
+    <state width="1398" height="275" key="GridCell.Tab.0.left/0.23.1440.828@0.23.1440.828" timestamp="1606102479781" />
+    <state width="1398" height="273" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1606170548018" />
+    <state width="483" height="269" key="GridCell.Tab.0.right" timestamp="1607110286141">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1602784980463" />
+    <state width="1398" height="210" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1601242636375" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1602646001732" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1602639906315" />
+    <state width="483" height="269" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1607110286141" />
+    <state width="483" height="269" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1606949955090" />
+    <state width="483" height="269" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1606951497653" />
+    <state width="1398" height="275" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1606102479781" />
+    <state width="1398" height="273" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1606170548018" />
+    <state x="471" y="143" key="RollbackChangesDialog" timestamp="1606098652567">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="471" y="143" key="RollbackChangesDialog/0.23.1440.827@0.23.1440.827" timestamp="1606098652567" />
+    <state x="221" y="73" key="SettingsEditor" timestamp="1607205687756">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="221" y="73" key="SettingsEditor/0.23.1440.826@0.23.1440.826" timestamp="1603153418003" />
+    <state x="221" y="73" key="SettingsEditor/0.23.1440.830@0.23.1440.830" timestamp="1607205687756" />
+    <state x="467" y="160" key="VCS.ChangeListViewerDialog" timestamp="1606624158282">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="467" y="160" key="VCS.ChangeListViewerDialog/0.23.1440.826@0.23.1440.826" timestamp="1606624158282" />
+    <state x="344" y="172" key="Vcs.Push.Dialog.v2" timestamp="1606624146146">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="344" y="171" key="Vcs.Push.Dialog.v2/0.23.1440.822@0.23.1440.822" timestamp="1601265370887" />
+    <state x="344" y="171" key="Vcs.Push.Dialog.v2/0.23.1440.823@0.23.1440.823" timestamp="1603902115428" />
+    <state x="344" y="171" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1605742474767" />
+    <state x="344" y="172" key="Vcs.Push.Dialog.v2/0.23.1440.826@0.23.1440.826" timestamp="1606624146146" />
+    <state width="720" height="412" key="XDebugger.FullValuePopup" timestamp="1606621499657">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="720" height="412" key="XDebugger.FullValuePopup/0.23.1440.826@0.23.1440.826" timestamp="1606621499657" />
+    <state x="390" y="266" key="com.intellij.ide.util.TipDialog" timestamp="1603081022866">
+      <screen x="0" y="23" width="1440" height="828" />
+    </state>
+    <state x="390" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.821@0.23.1440.821" timestamp="1601242665618" />
+    <state x="390" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1601245859241" />
+    <state x="390" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.823@0.23.1440.823" timestamp="1602713474528" />
+    <state x="390" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1602379902533" />
+    <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.827@0.23.1440.827" timestamp="1603055275640" />
+    <state x="390" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.828@0.23.1440.828" timestamp="1603081022866" />
+    <state x="444" y="159" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607205725663">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="444" y="159" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.830@0.23.1440.830" timestamp="1607205725663" />
+    <state x="430" y="234" key="git4idea.merge.GitPullDialog" timestamp="1606624399595">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="430" y="234" key="git4idea.merge.GitPullDialog/0.23.1440.826@0.23.1440.826" timestamp="1606624399595" />
+    <state x="385" y="165" width="670" height="687" key="search.everywhere.popup" timestamp="1606951597921">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="385" y="163" width="670" height="676" key="search.everywhere.popup/0.23.1440.816@0.23.1440.816" timestamp="1601158871126" />
+    <state x="385" y="164" width="670" height="683" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1604890239262" />
+    <state x="385" y="165" width="670" height="685" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1606617875204" />
+    <state x="385" y="165" width="670" height="687" key="search.everywhere.popup/0.23.1440.827@0.23.1440.827" timestamp="1606951597921" />
+    <state x="385" y="166" width="670" height="688" key="search.everywhere.popup/0.23.1440.828@0.23.1440.828" timestamp="1603078182343" />
+    <state x="385" y="166" width="670" height="688" key="search.everywhere.popup/0.23.1440.829@0.23.1440.829" timestamp="1603076969446" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/client/untitled/lib/pages/shareInfo_2.dart</url>
+          <line>144</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.1.0/lib/src/method_channel/method_channel_firebase.dart</url>
+          <line>33</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.1.0/lib/src/method_channel/method_channel_firebase.dart</url>
+          <line>80</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
