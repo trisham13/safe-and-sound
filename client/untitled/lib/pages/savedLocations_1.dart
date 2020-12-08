@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(SavedLocations());
 
@@ -107,15 +107,15 @@ class LocationWidget extends StatelessWidget {
           onPressed: () async {
             saveLocation(nameController.text ?? "", startController.text ?? "",
                 endController.text ?? "");
-            SharedPreferences prefs = await SharedPreferences.getInstance();
-            print(prefs.getStringList(nameController.text) ?? "");
+            //SharedPreferences prefs = await SharedPreferences.getInstance();
+            //print(prefs.getStringList(nameController.text) ?? "");
           })
     ]));
   }
 
   saveLocation(String name, String start, String end) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    //SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> route = <String>[start, end];
-    prefs.setStringList(name, route);
+    //prefs.setStringList(name, route);
   }
 }

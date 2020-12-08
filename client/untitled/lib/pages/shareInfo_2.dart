@@ -5,12 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/rendering.dart';
 
 //void main() => runApp(MyApp());
-
+/**
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(ShareInfoPage());
 }
+    */
 
 /// This is the main application widget.
 class ShareInfoPage extends StatelessWidget {
